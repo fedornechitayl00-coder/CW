@@ -57,5 +57,7 @@ public:
 	Time operator -- (int);
 	Time& operator ++ ();
 	Time operator ++ (int);
+
+	friend std::ostream& operator << (std::ostream& out, const Time& obj);
 };
 

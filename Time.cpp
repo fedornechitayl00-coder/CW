@@ -298,3 +298,15 @@ Time Time::operator++(int)
     ++(*this);
     return tmp;
 }
+
+std::ostream& operator<<(std::ostream& out, const Time& obj) {
+    if (obj.getFormat()) {
+        out << obj.getHour() << ":" << obj.getMinutes();
+    }
+    else {
+        if (obj.getHour() <= 12) out << obj.getHour() << " a.m.";
+        else out << (obj.getHour() - 12) << " p.m.";
+        out << ":" << obj.getMinutes();
+    }
+    return out;
+}
