@@ -1,0 +1,4 @@
+﻿  Time.cpp
+C:\Users\User\source\repos\perevantazenns_operatoriv\perevantazenns_operatoriv\Time.cpp(158,22): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
+C:\Users\User\source\repos\perevantazenns_operatoriv\perevantazenns_operatoriv\Time.cpp(175,22): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
+  perevantazenns_operatoriv.vcxproj -> C:\Users\User\source\repos\perevantazenns_operatoriv\x64\Debug\perevantazenns_operatoriv.exe
