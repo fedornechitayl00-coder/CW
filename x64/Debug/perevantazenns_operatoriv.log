@@ -1,8 +1,2 @@
 ﻿  Bus.cpp
-  Time.cpp
-C:\Users\User\source\repos\perevantazenns_operatoriv\perevantazenns_operatoriv\Time.cpp(159,22): warning C4244: '+=': conversion from 'float' to 'int', possible loss of data
-C:\Users\User\source\repos\perevantazenns_operatoriv\perevantazenns_operatoriv\Time.cpp(176,22): warning C4244: '-=': conversion from 'float' to 'int', possible loss of data
-  Generating Code...
-C:\Users\User\source\repos\perevantazenns_operatoriv\perevantazenns_operatoriv\Time.cpp(140,1): warning C4715: 'Time::operator<': not all control paths return a value
-C:\Users\User\source\repos\perevantazenns_operatoriv\perevantazenns_operatoriv\Time.cpp(145,1): warning C4717: 'Time::operator>': recursive on all control paths, function will cause runtime stack overflow
   perevantazenns_operatoriv.vcxproj -> C:\Users\User\source\repos\perevantazenns_operatoriv\x64\Debug\perevantazenns_operatoriv.exe

@@ -29,12 +29,12 @@ Time Bus::getStartTime() const
 
 void Bus::setStartTime(const Time& stTime)
 {
-    if (stTime > Time(5, 0, 0) && stTime < Time(23, 0, 0)) {
-        this->startTime = stTime; 
-    }
-    else {
-        std::cout << "Curfew";   //комендантский час 
-    }
+    //if ((stTime >= Time(5, 0, 0)) && (stTime <= Time(23, 0, 0))) {
+        startTime = stTime; 
+    //}
+    //else {
+    //    std::cout << "Curfew";   //комендантский час 
+    //}
 }
 
 Time Bus::getEndTime() const
@@ -44,8 +44,10 @@ Time Bus::getEndTime() const
 
 void Bus::setEndTime(const Time& endTime)
 {
-    if (endTime > startTime && endTime <= Time(23, 0, 0)) { this->endTime = endTime; }
-    else { std::cout << "Curfew"; }  
+    //if (endTime > startTime && endTime <= Time(23, 0, 0)) { 
+        this->endTime = endTime; 
+    //}
+    //else { std::cout << "Curfew"; }  
 }
 
 int Bus::getRouteDuration() const
@@ -88,11 +90,16 @@ std::istream& operator>>(std::istream& in, Bus& obj)
     in >> h >> m;
     Time st = Time(h, m, 0);
     obj.setStartTime(st);
+    //std::cout << "Current bus start time is: " << obj.getStartTime() << std::endl;
+
+    std::cin.ignore();
 
     std::cout << "Enter time when bus end it`s route: ";
     in >> h >> m;
     Time et = Time(h, m, 0);
     obj.setEndTime(et);
+    
+    std::cin.ignore();
 
     std::cout << "Enter time duration of 1 route(in minutes): ";
     int routeD;

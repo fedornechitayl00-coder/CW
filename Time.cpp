@@ -21,7 +21,7 @@ Time::Time(int hour, int minutes, int seconds, bool format)
 
 void Time::setHour(int hour)
 {
-    if (hour <= 24 && hour >= 0) {
+    if (hour < 24 && hour >= 0) {
         this->hour = hour;
     }
 }
@@ -33,7 +33,7 @@ int Time::getHour() const
 
 void Time::setMinutes(int minutes)
 {
-    if (minutes < 60) {
+    if (minutes < 60 && minutes>=0) {
         this->minutes = minutes;
     }
 }
@@ -45,7 +45,7 @@ int Time::getMinutes() const
 
 void Time::setSeconds(int seconds)
 {
-    if (seconds <= 60) {
+    if (seconds < 60 && seconds>=0) {
         this->seconds = seconds;
     }
 }
@@ -72,7 +72,7 @@ bool Time::valid() const
 
 void Time::tickTime()
 {
-    if (seconds < 60)
+    if (seconds < 59)
     {
         seconds += 1;
     }
@@ -94,11 +94,11 @@ void Time::untickTime()
         seconds -= 1;
     }
     else {
-        seconds = 60;
+        seconds = 59;
         if (minutes < 60 && minutes >0) minutes -= 1;
         else {
             minutes = 59;
-            if (hour < 24 && hour > 0) hour = 23;
+            if (hour < 24 && hour > 0) hour -= 1;
         }
     }
 }
@@ -137,21 +137,23 @@ bool Time::operator<(const Time& obj) const&
 {
     if (hour != obj.hour) { return hour < obj.hour; }
     if (minutes != obj.minutes) { return minutes < obj.minutes; }
+    if (seconds != obj.seconds) { return seconds < obj.seconds; }
+    return false;
 }
 
 bool Time::operator>(const Time& obj) const&
 {
-    return (*this > obj);
+    return *this < obj;
 }
 
 bool Time::operator>=(const Time& obj) const&
 {
-    return !(*this > obj) || (*this==obj);
+    return !(*this < obj) || (*this==obj);
 }
 
 bool Time::operator<=(const Time& obj) const&
 {
-    return !(*this < obj) || (*this == obj);
+    return !(*this > obj) || (*this == obj);
 }
 
 Time& Time::operator+=(float s)
