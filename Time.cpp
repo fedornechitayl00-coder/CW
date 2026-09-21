@@ -133,14 +133,15 @@ bool Time::operator!=(const Time& obj) const&
     return !(*this == obj);
 }
 
-bool Time::operator>(const Time& obj) const&
-{
-    return !(*this < obj) || (*this != obj);
-}
-
 bool Time::operator<(const Time& obj) const&
 {
-    return !(*this > obj) || (*this ==obj);
+    if (hour != obj.hour) { return hour < obj.hour; }
+    if (minutes != obj.minutes) { return minutes < obj.minutes; }
+}
+
+bool Time::operator>(const Time& obj) const&
+{
+    return obj < *this;
 }
 
 bool Time::operator>=(const Time& obj) const&

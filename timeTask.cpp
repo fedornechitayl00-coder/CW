@@ -1,6 +1,6 @@
 #include "Time.h"
 #include "Schedule.h"
-   
+#include "Bus.h"
 
 int main() {
 	//Time t1(12, 23, 41);
@@ -21,10 +21,10 @@ int main() {
 	//t1.showTime();
 	//t2.showTime();
 
-	Schedule s1;
-	std::cin >> s1;
+	//Schedule s1;
+	//std::cin >> s1;
 
-	s1.generateSchedule();
+	//s1.generateSchedule();
 		
 	//Time startTime;
 	//int lessonDuration;
@@ -32,4 +32,9 @@ int main() {
 	//int longBreak;
 	//int longBreakAfter;
 	//int totalLessons;
+
+	Bus b1;
+	std::cin >> b1;
+
+	b1.generateBus();
 }
