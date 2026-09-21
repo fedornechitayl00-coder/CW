@@ -141,7 +141,7 @@ bool Time::operator<(const Time& obj) const&
 
 bool Time::operator>(const Time& obj) const&
 {
-    return obj < *this;
+    return (*this > obj);
 }
 
 bool Time::operator>=(const Time& obj) const&

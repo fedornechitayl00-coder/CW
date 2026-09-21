@@ -29,8 +29,12 @@ Time Bus::getStartTime() const
 
 void Bus::setStartTime(const Time& stTime)
 {
-/*    if (stTime >= Time(5, 0, 0) && stTime <= Time(23, 0, 0)) {*/ this->startTime = stTime; 
-    //else { std::cout << "Curfew"; }  //коменданский час 
+    if (stTime > Time(5, 0, 0) && stTime < Time(23, 0, 0)) {
+        this->startTime = stTime; 
+    }
+    else {
+        std::cout << "Curfew";   //комендантский час 
+    }
 }
 
 Time Bus::getEndTime() const
@@ -40,8 +44,8 @@ Time Bus::getEndTime() const
 
 void Bus::setEndTime(const Time& endTime)
 {
-/*    if (endTime >= Time(5, 0, 0) && endTime <= Time(23, 0, 0)) { */this->endTime = endTime; 
-    //else { std::cout << "Curfew"; }  
+    if (endTime > startTime && endTime <= Time(23, 0, 0)) { this->endTime = endTime; }
+    else { std::cout << "Curfew"; }  
 }
 
 int Bus::getRouteDuration() const
